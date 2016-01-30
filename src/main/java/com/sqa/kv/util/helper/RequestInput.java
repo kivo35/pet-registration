@@ -23,16 +23,16 @@ public class RequestInput
 			// increased by 1 and add the current elements
 			newStringArray = Arrays.copyOf(elements, elements.length + 1);
 			// Set the last element to supplied String addString
-			newStringArray[elements.length - 1] = addString;
+			newStringArray[elements.length] = addString;
 		}
 		else
 		{
 			// Suplied array does not contain any elements
 			newStringArray = new String[1];
 			// Set the last and only element to supplied String addString
-			newStringArray[elements.length - 1] = addString;
+			newStringArray[0] = addString;
 		}
-		return elements;
+		return newStringArray;
 	}
 
 	public static boolean getBoolean(String question)
@@ -43,7 +43,7 @@ public class RequestInput
 		while (true)
 		{
 			// Ask the user a question to get relative input
-			System.out.print(question);
+			System.out.print(question + "(Yes/Y or No/N): ");
 			// Set the number based on what the user enters on their
 			// keyboard
 			input = (scanner.nextLine());
@@ -60,7 +60,7 @@ public class RequestInput
 			// Check if user entered something else
 			else
 			{
-				System.out.println("You have not entered a valid option, please choose Yes/Y or No/N.");
+				System.out.println("You have not entered a valid option, please choose (Yes/Y or No/N)");
 				continue;
 			}
 		}
